@@ -8,7 +8,7 @@
 <meta name="description" content="Um ano de noivado — 20/10/2025 a 20/10/2026">
 <meta property="og:title" content="Para Juliana 🌹">
 <meta property="og:description" content="Um ano de noivado — 20 de outubro">
-<meta property="og:image" content="fotos/17.jpg">
+<meta property="og:image" content="fotos/023.jpg">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌹</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -181,7 +181,7 @@ section{position:relative;z-index:6;padding:90px 16px;max-width:1100px;margin:0 
   <div class="slider revela" id="slider">
     <div class="barra" id="barra"></div>
     <button class="pausa" id="pausa">❚❚ pausar</button>
-    <div class="contagem" id="contagem">1 / 53</div>
+    <div class="contagem" id="contagem">1 / 100</div>
     <button class="seta esq" id="ant" aria-label="Anterior">‹</button>
     <button class="seta dir" id="prox" aria-label="Próxima">›</button>
   </div>
@@ -195,38 +195,20 @@ section{position:relative;z-index:6;padding:90px 16px;max-width:1100px;margin:0 
   <div class="assinatura revela">do seu noivo, Pedro · 20 de outubro de 2026</div>
 </section>
 
+<script src="fotos.js"></script>
 <script>
-/* ---------- Fotos e legendas ---------- */
-const capitulos = [
-  [8,  'Nossos dias juntinhos', 'junho de 2025'],
-  [3,  'Te esperando com rosas', 'outubro de 2025'],
-  [1,  'Meu sorriso favorito', 'outubro de 2025'],
-  [3,  'Nosso pôr do sol', 'outubro de 2025'],
-  [3,  'O dia do sim', '20 de outubro de 2025'],
-  [1,  'Entre a Bahia e o Piauí', 'outubro de 2025'],
-  [8,  'Noivos ♥', 'outubro de 2025'],
-  [1,  'Você e eu', 'outubro de 2025'],
-  [4,  'Fim de ano ao seu lado', 'dezembro de 2025'],
-  [2,  'Mais um pôr do sol juntinhos', 'dezembro de 2025'],
-  [3,  'Clima de Natal', 'dezembro de 2025'],
-  [4,  'Começando o ano com você', 'janeiro de 2026'],
-  [1,  'Rio de Janeiro', 'junho de 2026'],
-  [3,  'Cristo Redentor', 'junho de 2026'],
-  [3,  'Rio de Janeiro', 'junho de 2026'],
-  [1,  'AquaRio', 'junho de 2026'],
-  [2,  'Igual Carl e Ellie', 'junho de 2026'],
-  [2,  'Juntinhos, sempre', 'junho de 2026'],
-];
-const fotos = [];
-let n = 1;
-capitulos.forEach(([q, t, d]) => { for (let i = 0; i < q; i++) fotos.push({src: `fotos/${String(n++).padStart(2,'0')}.jpg`, t, d}); });
+/* ---------- Fotos e legendas (fotos.js) ---------- */
+const fotos = LEGENDAS.map(([t, d], i) => {
+  const nome = String(i + 1).padStart(3, '0') + '.jpg';
+  return {src: `fotos/${nome}`, mini: `fotos/mini/${nome}`, t, d};
+});
 
 const slider = document.getElementById('slider'), minis = document.getElementById('miniaturas');
 const slides = fotos.map((f, i) => {
   const s = document.createElement('div'); s.className = 'slide';
   s.innerHTML = `<div class="fundo"></div><img alt="${f.t}" loading="lazy" draggable="false"><div class="legenda">${f.t}<small>${f.d}</small></div>`;
   slider.appendChild(s);
-  const m = document.createElement('img'); m.loading = 'lazy'; m.src = f.src; m.alt = ''; m.onclick = () => { ir(i); reinicia(); };
+  const m = document.createElement('img'); m.loading = 'lazy'; m.src = f.mini; m.alt = ''; m.onclick = () => { ir(i); reinicia(); };
   minis.appendChild(m);
   return s;
 });
@@ -304,14 +286,18 @@ function chuvaDeCoracoes(){
     s:(18+Math.random()*22)*devicePixelRatio, e:['❤️','🌹','💕','💗'][i%4], vida:400});
 }
 
-/* ---------- Música (YouTube, escolhida pelo Pedro) ---------- */
-const VIDEO_ID = 'JL0FzzP2aIs';
+/* ---------- Músicas (YouTube): a escolhida pelo Pedro e depois "Deus é Muito Bom" — Luan Santana, em sequência ---------- */
+const MUSICAS = ['JL0FzzP2aIs', 'JwNmNoWrz70'];
+let faixa = 0;
 let player, prontoYT = false, querTocar = false, tocando = false;
 const tag = document.createElement('script'); tag.src = 'https://www.youtube.com/iframe_api'; document.head.appendChild(tag);
+function proximaMusica(){ faixa = (faixa + 1) % MUSICAS.length; player.loadVideoById(MUSICAS[faixa]); }
 function onYouTubeIframeAPIReady(){
-  player = new YT.Player('yt', {videoId: VIDEO_ID, playerVars:{autoplay:0, controls:0, loop:1, playlist:VIDEO_ID, playsinline:1},
+  player = new YT.Player('yt', {videoId: MUSICAS[0], playerVars:{autoplay:0, controls:0, playsinline:1},
     events:{onReady:() => { prontoYT = true; player.setVolume(70); if (querTocar) tocar(); },
-            onStateChange:e => { tocando = e.data === YT.PlayerState.PLAYING; document.getElementById('musica').classList.toggle('tocando', tocando); }}});
+            onStateChange:e => { if (e.data === YT.PlayerState.ENDED) proximaMusica();
+              tocando = e.data === YT.PlayerState.PLAYING; document.getElementById('musica').classList.toggle('tocando', tocando); },
+            onError:() => proximaMusica()}});
 }
 function tocar(){ if (prontoYT) player.playVideo(); else querTocar = true; }
 function alternaMusica(){ if (!prontoYT) return; tocando ? player.pauseVideo() : player.playVideo(); }
