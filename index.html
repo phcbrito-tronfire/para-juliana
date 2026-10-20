@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Para Juliana</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Um ano de noivado — 20/10/2025 a 20/10/2026">
+<meta property="og:title" content="Para Juliana 🌹">
+<meta property="og:description" content="Um ano de noivado — 20 de outubro">
+<meta property="og:image" content="fotos/17.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌹</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --vinho:#3a0610; --vinho2:#5c0a1c; --rubi:#9e1030; --rosa:#d7264a; --rosa-claro:#f6b3c0;
+  --ouro:#e8c48a; --creme:#fff4ee; --texto:#fbe9ea;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:radial-gradient(ellipse at top,#6d0b22 0%,var(--vinho) 55%,#1c0207 100%) fixed;
+  color:var(--texto);font-family:'Cormorant Garamond',Georgia,serif;overflow-x:hidden;min-height:100vh;
+}
+#petalas{position:fixed;inset:0;pointer-events:none;z-index:5}
+
+/* ---------- Abertura ---------- */
+#abertura{position:fixed;inset:0;z-index:50;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  background:radial-gradient(circle at 50% 40%,#7a0d26 0%,#2a030b 75%);text-align:center;padding:24px;transition:opacity 1.2s ease, visibility 1.2s}
+#abertura.saiu{opacity:0;visibility:hidden}
+.envelope{position:relative;width:min(300px,78vw);aspect-ratio:3/2;background:linear-gradient(160deg,#fdf1ea,#efd9cf);
+  border-radius:6px;box-shadow:0 25px 60px rgba(0,0,0,.55);cursor:pointer;animation:flutua 3.5s ease-in-out infinite}
+.envelope::before{content:"";position:absolute;inset:0;background:linear-gradient(to bottom right,transparent 49.5%,#e3c6ba 50%) left/50% 100% no-repeat,
+  linear-gradient(to bottom left,transparent 49.5%,#e3c6ba 50%) right/50% 100% no-repeat;border-radius:6px}
+.envelope::after{content:"";position:absolute;left:0;right:0;top:0;height:58%;background:#f4e1d8;clip-path:polygon(0 0,100% 0,50% 100%);
+  filter:drop-shadow(0 3px 3px rgba(0,0,0,.15))}
+.selo{position:absolute;left:50%;top:58%;transform:translate(-50%,-50%);z-index:2;width:62px;height:62px;border-radius:50%;
+  background:radial-gradient(circle at 35% 35%,#e0344f,#8c0a22);display:grid;place-items:center;font-size:30px;
+  box-shadow:0 4px 10px rgba(0,0,0,.4), inset 0 -3px 6px rgba(0,0,0,.3)}
+@keyframes flutua{50%{transform:translateY(-10px) rotate(-1deg)}}
+#abertura h1{font-family:'Great Vibes',cursive;font-weight:400;font-size:clamp(44px,11vw,76px);color:var(--creme);margin-top:38px;text-shadow:0 0 25px rgba(255,90,120,.45)}
+#abertura p{font-family:'Montserrat',sans-serif;font-weight:300;letter-spacing:.25em;text-transform:uppercase;font-size:12px;opacity:.85;margin-top:8px}
+.botao{margin-top:30px;font-family:'Montserrat',sans-serif;font-weight:500;letter-spacing:.2em;text-transform:uppercase;font-size:13px;
+  color:var(--vinho);background:linear-gradient(135deg,#ffe6c2,var(--ouro));border:0;border-radius:40px;padding:15px 34px;cursor:pointer;
+  box-shadow:0 8px 25px rgba(232,196,138,.35);transition:transform .25s}
+.botao:hover{transform:scale(1.05)}
+.dica{font-size:13px!important;letter-spacing:.08em!important;text-transform:none!important;font-style:italic;margin-top:18px!important;opacity:.6!important}
+
+/* ---------- Geral ---------- */
+section{position:relative;z-index:6;padding:90px 16px;max-width:1100px;margin:0 auto}
+.titulo{font-family:'Great Vibes',cursive;font-weight:400;font-size:clamp(42px,8vw,68px);text-align:center;color:var(--creme);
+  text-shadow:0 0 25px rgba(255,80,110,.35);line-height:1.1}
+.sub{font-family:'Montserrat',sans-serif;font-weight:300;letter-spacing:.3em;text-transform:uppercase;font-size:12px;text-align:center;color:var(--rosa-claro);margin-top:12px}
+.divisor{display:flex;align-items:center;justify-content:center;gap:14px;margin:26px auto;color:var(--ouro);font-size:22px}
+.divisor::before,.divisor::after{content:"";height:1px;width:min(120px,25vw);background:linear-gradient(90deg,transparent,var(--ouro),transparent)}
+.revela{opacity:0;transform:translateY(40px);transition:opacity 1.2s ease, transform 1.2s ease}
+.revela.ver{opacity:1;transform:none}
+
+/* ---------- Hero ---------- */
+#inicio{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding-top:60px}
+.nomes{font-family:'Great Vibes',cursive;font-size:clamp(64px,16vw,140px);line-height:1;color:var(--creme);text-shadow:0 0 40px rgba(255,70,100,.5)}
+.nomes span{color:var(--rosa);font-size:.6em;vertical-align:middle;display:inline-block;animation:bate 1.4s ease-in-out infinite}
+@keyframes bate{0%,100%{transform:scale(1)}15%{transform:scale(1.25)}30%{transform:scale(1)}45%{transform:scale(1.15)}}
+.data-grande{font-family:'Montserrat',sans-serif;font-weight:300;letter-spacing:.45em;font-size:clamp(13px,3vw,16px);margin-top:18px;color:var(--ouro)}
+.rosa-hero{font-size:clamp(40px,9vw,64px);margin-bottom:10px;filter:drop-shadow(0 6px 14px rgba(0,0,0,.4));animation:flutua 4s ease-in-out infinite}
+.contadores{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-top:46px}
+.contador{background:rgba(255,255,255,.06);border:1px solid rgba(232,196,138,.35);border-radius:18px;padding:18px 22px;min-width:150px;backdrop-filter:blur(4px)}
+.contador b{display:block;font-family:'Cormorant Garamond',serif;font-weight:600;font-size:42px;color:var(--creme);line-height:1}
+.contador small{font-family:'Montserrat',sans-serif;font-weight:300;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--rosa-claro)}
+.desce{margin-top:50px;font-family:'Montserrat',sans-serif;font-size:11px;letter-spacing:.3em;text-transform:uppercase;opacity:.7;animation:flutua 2.5s infinite;text-decoration:none;color:inherit}
+
+/* ---------- Carta ---------- */
+.carta{position:relative;max-width:760px;margin:40px auto 0;background:linear-gradient(170deg,#fff8f3,#f7e6dc);color:#4a1220;
+  border-radius:8px;padding:clamp(34px,7vw,70px) clamp(22px,7vw,72px);box-shadow:0 30px 70px rgba(0,0,0,.5)}
+.carta::before{content:"";position:absolute;inset:12px;border:1px solid rgba(158,16,48,.25);border-radius:4px;pointer-events:none}
+.canto{position:absolute;font-size:34px}
+.canto.a{top:-18px;left:-12px;transform:rotate(-25deg)} .canto.b{bottom:-18px;right:-12px;transform:rotate(155deg)}
+.carta .saud{font-family:'Great Vibes',cursive;font-size:clamp(38px,8vw,52px);color:var(--rubi);margin-bottom:18px}
+.carta p{font-size:clamp(19px,2.6vw,22px);line-height:1.75;text-align:justify;hyphens:auto;margin-bottom:20px;text-indent:1.6em}
+.carta p.final{font-family:'Great Vibes',cursive;font-size:clamp(30px,6vw,40px);text-align:center;text-indent:0;color:var(--rubi);line-height:1.35;margin-top:30px}
+.carta .ass{text-align:right;font-family:'Great Vibes',cursive;font-size:34px;color:var(--rubi);text-indent:0}
+
+/* ---------- Slides ---------- */
+.slider{position:relative;max-width:900px;margin:40px auto 0;height:min(78vh,720px);border-radius:22px;overflow:hidden;
+  box-shadow:0 30px 80px rgba(0,0,0,.6);border:1px solid rgba(232,196,138,.3);background:#14020a;touch-action:pan-y;user-select:none}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity 1.1s ease;}
+.slide.ativo{opacity:1}
+.slide .fundo{position:absolute;inset:-30px;background-size:cover;background-position:center;filter:blur(28px) brightness(.45) saturate(1.2)}
+.slide img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transform:scale(1.0)}
+.slide.ativo img{animation:kb 7s ease-out forwards}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.045)}}
+.legenda{position:absolute;left:0;right:0;bottom:0;padding:60px 20px 22px;text-align:center;
+  background:linear-gradient(transparent,rgba(30,2,10,.85));font-family:'Great Vibes',cursive;font-size:clamp(26px,5vw,36px);color:var(--creme);text-shadow:0 2px 8px rgba(0,0,0,.6)}
+.legenda small{display:block;font-family:'Montserrat',sans-serif;font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--ouro);margin-top:4px}
+.seta{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.35);
+  background:rgba(40,3,12,.45);color:#fff;font-size:22px;cursor:pointer;backdrop-filter:blur(4px);display:grid;place-items:center}
+.seta.esq{left:12px}.seta.dir{right:12px}
+.seta:hover{background:rgba(158,16,48,.7)}
+.contagem{position:absolute;top:14px;right:16px;z-index:3;font-family:'Montserrat',sans-serif;font-size:12px;letter-spacing:.15em;
+  background:rgba(40,3,12,.5);padding:6px 12px;border-radius:20px}
+.pausa{position:absolute;top:14px;left:16px;z-index:3;font-family:'Montserrat',sans-serif;font-size:12px;background:rgba(40,3,12,.5);
+  padding:6px 12px;border-radius:20px;border:0;color:#fff;cursor:pointer;letter-spacing:.1em}
+.barra{position:absolute;left:0;top:0;height:3px;background:linear-gradient(90deg,var(--rosa),var(--ouro));z-index:4;width:0}
+.miniaturas{display:flex;gap:8px;overflow-x:auto;max-width:900px;margin:16px auto 0;padding:4px 2px 10px;scrollbar-width:thin;scrollbar-color:var(--rubi) transparent}
+.miniaturas img{flex:0 0 auto;width:62px;height:62px;object-fit:cover;border-radius:10px;opacity:.45;cursor:pointer;border:2px solid transparent;transition:.3s}
+.miniaturas img.ativo{opacity:1;border-color:var(--ouro);transform:translateY(-3px)}
+
+/* ---------- Final ---------- */
+#final{text-align:center;padding-bottom:140px}
+.coracao{font-size:clamp(80px,18vw,130px);display:inline-block;animation:bate 1.4s ease-in-out infinite;filter:drop-shadow(0 0 30px rgba(255,40,80,.6));cursor:pointer}
+.frase-final{font-family:'Great Vibes',cursive;font-size:clamp(40px,9vw,72px);color:var(--creme);margin-top:20px;text-shadow:0 0 30px rgba(255,80,110,.5)}
+.assinatura{font-family:'Montserrat',sans-serif;font-weight:300;letter-spacing:.3em;text-transform:uppercase;font-size:12px;color:var(--ouro);margin-top:24px}
+
+/* ---------- Música ---------- */
+#musica{position:fixed;right:16px;bottom:16px;z-index:40;width:54px;height:54px;border-radius:50%;border:1px solid rgba(232,196,138,.6);
+  background:radial-gradient(circle at 35% 35%,#c81c42,#5c0a1c);color:#fff;font-size:22px;cursor:pointer;box-shadow:0 8px 25px rgba(0,0,0,.5);display:none}
+#musica.tocando{animation:gira 6s linear infinite}
+@keyframes gira{to{transform:rotate(360deg)}}
+#yt{position:fixed;left:-9999px;top:0;width:200px;height:200px}
+
+/* rosas decorativas nas laterais */
+.rosas-lado{position:fixed;top:0;bottom:0;width:70px;z-index:4;pointer-events:none;display:flex;flex-direction:column;justify-content:space-around;font-size:30px;opacity:.55}
+.rosas-lado.e{left:6px}.rosas-lado.d{right:6px;align-items:flex-end}
+@media (max-width:700px){.rosas-lado{display:none}.seta{width:40px;height:40px}.slider{height:72vh}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<canvas id="petalas"></canvas>
+<div class="rosas-lado e"><span>🌹</span><span>🥀</span><span>🌹</span><span>🌹</span></div>
+<div class="rosas-lado d"><span>🌹</span><span>🌹</span><span>🥀</span><span>🌹</span></div>
+
+<!-- Abertura -->
+<div id="abertura">
+  <div class="envelope" onclick="abrir()"><div class="selo">🌹</div></div>
+  <h1>Para Juliana</h1>
+  <p>com todo o meu amor</p>
+  <button class="botao" onclick="abrir()">Abrir ♥</button>
+  <p class="dica">aumente o volume 🎶</p>
+</div>
+
+<div id="yt"></div>
+<button id="musica" title="Música" onclick="alternaMusica()">♫</button>
+
+<!-- Início -->
+<section id="inicio">
+  <div class="rosa-hero">🌹</div>
+  <div class="nomes">Pedro <span>♥</span> Juliana</div>
+  <div class="data-grande">20 · 10 · 2025 — 20 · 10 · 2026</div>
+  <div class="sub" style="margin-top:14px">um ano de noivado</div>
+  <div class="contadores">
+    <div class="contador"><b id="c-noivos">365</b><small>dias de noivos</small></div>
+    <div class="contador"><b id="c-casamento">—</b><small>dias para o nosso casamento</small></div>
+  </div>
+  <a class="desce" href="#carta">role para baixo ↓</a>
+</section>
+
+<!-- Carta -->
+<section id="carta">
+  <h2 class="titulo revela">Uma carta para você</h2>
+  <div class="divisor revela">🌹</div>
+  <div class="carta revela">
+    <span class="canto a">🌹</span><span class="canto b">🌹</span>
+    <div class="saud">Meu amor,</div>
+    <p>Hoje é um dia mais que especial. Há exatamente um ano, tomei a decisão mais importante de toda a minha vida: te pedir em noivado. Sei que foi desajeitado, e a mais pura verdade é que eu estava muito nervoso, porque sabia que era uma decisão que mudaria pra sempre nossas vidas. E, da forma mais doce e amorosa do mundo, você aceitou. Acho que nunca te falei, mas naquele momento parecia que meu coração ia sair pela boca, mas nunca estive mais feliz.</p>
+    <p>Ser seu noivo é uma honra enorme, meu amor. Poder cuidar de você, demonstrar meu amor e planejar todo o nosso futuro tem sido a melhor coisa do mundo.</p>
+    <p>Sei que a distância, por muitas vezes, causa uma saudade absurda e não podemos estar juntinhos a todo momento, mas cada encontro nosso é como se fosse a primeira vez: o mesmo frio na barriga e a emoção de poder te beijar novamente. Tudo isso faz valer a pena todos os dias de espera.</p>
+    <p>Saiba que te amo mais do que achei que fosse possível amar alguém, e hoje só planejo minha vida estando ao seu lado. Muito em breve, quero poder te chamar de minha esposa e, juntos, construirmos nossa família, e poder ser seu ponto de paz e tranquilidade. Todo sacrifício que fazemos é mais um passo nessa direção.</p>
+    <p class="final">Minha Juliana, amor da minha juventude, sempre foi você e só poderia ser você. Te esperaria por uma vida toda. Eu te amo demais!!!</p>
+  </div>
+</section>
+
+<!-- Slides -->
+<section id="momentos">
+  <h2 class="titulo revela">Nossos momentos</h2>
+  <div class="sub revela">cada foto, um pedacinho da nossa história</div>
+  <div class="divisor revela">♥</div>
+  <div class="slider revela" id="slider">
+    <div class="barra" id="barra"></div>
+    <button class="pausa" id="pausa">❚❚ pausar</button>
+    <div class="contagem" id="contagem">1 / 53</div>
+    <button class="seta esq" id="ant" aria-label="Anterior">‹</button>
+    <button class="seta dir" id="prox" aria-label="Próxima">›</button>
+  </div>
+  <div class="miniaturas" id="miniaturas"></div>
+</section>
+
+<!-- Final -->
+<section id="final">
+  <div class="coracao revela" onclick="chuvaDeCoracoes()">❤️</div>
+  <div class="frase-final revela">Sempre foi você.</div>
+  <div class="assinatura revela">do seu noivo, Pedro · 20 de outubro de 2026</div>
+</section>
+
+<script>
+/* ---------- Fotos e legendas ---------- */
+const capitulos = [
+  [8,  'Nossos dias juntinhos', 'junho de 2025'],
+  [3,  'Te esperando com rosas', 'outubro de 2025'],
+  [1,  'Meu sorriso favorito', 'outubro de 2025'],
+  [3,  'Nosso pôr do sol', 'outubro de 2025'],
+  [3,  'O dia do sim', '20 de outubro de 2025'],
+  [1,  'Entre a Bahia e o Piauí', 'outubro de 2025'],
+  [8,  'Noivos ♥', 'outubro de 2025'],
+  [1,  'Você e eu', 'outubro de 2025'],
+  [4,  'Fim de ano ao seu lado', 'dezembro de 2025'],
+  [2,  'Mais um pôr do sol juntinhos', 'dezembro de 2025'],
+  [3,  'Clima de Natal', 'dezembro de 2025'],
+  [4,  'Começando o ano com você', 'janeiro de 2026'],
+  [1,  'Rio de Janeiro', 'junho de 2026'],
+  [3,  'Cristo Redentor', 'junho de 2026'],
+  [3,  'Rio de Janeiro', 'junho de 2026'],
+  [1,  'AquaRio', 'junho de 2026'],
+  [2,  'Igual Carl e Ellie', 'junho de 2026'],
+  [2,  'Juntinhos, sempre', 'junho de 2026'],
+];
+const fotos = [];
+let n = 1;
+capitulos.forEach(([q, t, d]) => { for (let i = 0; i < q; i++) fotos.push({src: `fotos/${String(n++).padStart(2,'0')}.jpg`, t, d}); });
+
+const slider = document.getElementById('slider'), minis = document.getElementById('miniaturas');
+const slides = fotos.map((f, i) => {
+  const s = document.createElement('div'); s.className = 'slide';
+  s.innerHTML = `<div class="fundo"></div><img alt="${f.t}" loading="lazy" draggable="false"><div class="legenda">${f.t}<small>${f.d}</small></div>`;
+  slider.appendChild(s);
+  const m = document.createElement('img'); m.loading = 'lazy'; m.src = f.src; m.alt = ''; m.onclick = () => { ir(i); reinicia(); };
+  minis.appendChild(m);
+  return s;
+});
+function carrega(i){
+  const s = slides[(i + fotos.length) % fotos.length], img = s.querySelector('img');
+  if (!img.src) { img.src = fotos[(i + fotos.length) % fotos.length].src; s.querySelector('.fundo').style.backgroundImage = `url(${img.src})`; }
+}
+let atual = 0, pausado = false, timer, inicioT;
+const DUR = 5000, barra = document.getElementById('barra');
+function ir(i){
+  slides[atual].classList.remove('ativo'); minis.children[atual].classList.remove('ativo');
+  atual = (i + fotos.length) % fotos.length;
+  carrega(atual); carrega(atual + 1); carrega(atual - 1);
+  slides[atual].classList.add('ativo'); minis.children[atual].classList.add('ativo');
+  const mi = minis.children[atual]; minis.scrollTo({left: mi.offsetLeft - minis.clientWidth/2 + 31, behavior:'smooth'});
+  document.getElementById('contagem').textContent = `${atual+1} / ${fotos.length}`;
+}
+function reinicia(){
+  clearTimeout(timer); barra.style.transition = 'none'; barra.style.width = '0';
+  if (pausado) return;
+  requestAnimationFrame(() => requestAnimationFrame(() => { barra.style.transition = `width ${DUR}ms linear`; barra.style.width = '100%'; }));
+  timer = setTimeout(() => { ir(atual + 1); reinicia(); }, DUR);
+}
+document.getElementById('prox').onclick = () => { ir(atual + 1); reinicia(); };
+document.getElementById('ant').onclick = () => { ir(atual - 1); reinicia(); };
+document.getElementById('pausa').onclick = (e) => { pausado = !pausado; e.target.textContent = pausado ? '▶ continuar' : '❚❚ pausar'; reinicia(); };
+let x0 = null;
+slider.addEventListener('touchstart', e => x0 = e.touches[0].clientX, {passive:true});
+slider.addEventListener('touchend', e => { if (x0 === null) return; const dx = e.changedTouches[0].clientX - x0;
+  if (Math.abs(dx) > 40) { ir(atual + (dx < 0 ? 1 : -1)); reinicia(); } x0 = null; });
+document.addEventListener('keydown', e => { if (e.key === 'ArrowRight') { ir(atual+1); reinicia(); } if (e.key === 'ArrowLeft') { ir(atual-1); reinicia(); } });
+ir(0);
+
+/* ---------- Contadores ---------- */
+const dia = 864e5, hoje = new Date();
+const noivado = new Date(2025, 9, 20), casamento = new Date(2027, 2, 6);
+document.getElementById('c-noivos').textContent = Math.max(0, Math.floor((hoje - noivado) / dia));
+document.getElementById('c-casamento').textContent = Math.max(0, Math.ceil((casamento - hoje) / dia));
+
+/* ---------- Revelar ao rolar ---------- */
+const obs = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('ver'); obs.unobserve(e.target); } }), {threshold:.15});
+document.querySelectorAll('.revela').forEach(el => obs.observe(el));
+const obsSlider = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting && !timer) reinicia(); }), {threshold:.3});
+obsSlider.observe(slider);
+
+/* ---------- Pétalas caindo ---------- */
+const cv = document.getElementById('petalas'), cx = cv.getContext('2d');
+let W, H, petalas = [], extras = [];
+function tam(){ W = cv.width = innerWidth * devicePixelRatio; H = cv.height = innerHeight * devicePixelRatio; }
+addEventListener('resize', tam); tam();
+const cores = ['#c8102e','#e0294a','#a10d2b','#f04b6a','#8e0b22'];
+function novaPetala(topo){ return {x:Math.random()*W, y: topo ? -20 : Math.random()*H, r:(6+Math.random()*8)*devicePixelRatio,
+  vy:(0.5+Math.random()*1.1)*devicePixelRatio, vx:(Math.random()-.5)*0.6*devicePixelRatio, a:Math.random()*6.28, va:(Math.random()-.5)*0.04,
+  osc:Math.random()*6.28, c:cores[Math.floor(Math.random()*cores.length)]}; }
+const qtd = innerWidth < 700 ? 22 : 38;
+for (let i = 0; i < qtd; i++) petalas.push(novaPetala(false));
+function desenhaPetala(p){
+  cx.save(); cx.translate(p.x, p.y); cx.rotate(p.a); cx.scale(1, Math.abs(Math.sin(p.osc))*0.6+0.4);
+  const g = cx.createRadialGradient(-p.r*.3, -p.r*.3, 1, 0, 0, p.r*1.3); g.addColorStop(0, '#ff8098'); g.addColorStop(1, p.c);
+  cx.fillStyle = g; cx.globalAlpha = .85;
+  cx.beginPath(); cx.moveTo(0, -p.r); cx.bezierCurveTo(p.r, -p.r, p.r, p.r*.6, 0, p.r); cx.bezierCurveTo(-p.r, p.r*.6, -p.r, -p.r, 0, -p.r); cx.fill();
+  cx.restore();
+}
+function anima(){
+  cx.clearRect(0, 0, W, H);
+  petalas.forEach((p, i) => { p.osc += .03; p.x += p.vx + Math.sin(p.osc)*0.5; p.y += p.vy; p.a += p.va; if (p.y > H + 30) petalas[i] = novaPetala(true); desenhaPetala(p); });
+  extras = extras.filter(h => h.y > -60 && h.vida > 0);
+  extras.forEach(h => { h.y += h.vy; h.x += Math.sin(h.y/40)*1.2; h.vida--; cx.globalAlpha = Math.min(1, h.vida/60);
+    cx.font = `${h.s}px serif`; cx.fillText(h.e, h.x, h.y); cx.globalAlpha = 1; });
+  requestAnimationFrame(anima);
+}
+if (!matchMedia('(prefers-reduced-motion: reduce)').matches) anima();
+function chuvaDeCoracoes(){
+  for (let i = 0; i < 40; i++) extras.push({x:Math.random()*W, y:H + Math.random()*H*.3, vy:-(2+Math.random()*3)*devicePixelRatio,
+    s:(18+Math.random()*22)*devicePixelRatio, e:['❤️','🌹','💕','💗'][i%4], vida:400});
+}
+
+/* ---------- Música (YouTube: "Vem Meu Amor" — Olodum) ---------- */
+const VIDEO_ID = 'zHoEJoS0IJA';
+let player, prontoYT = false, querTocar = false, tocando = false;
+const tag = document.createElement('script'); tag.src = 'https://www.youtube.com/iframe_api'; document.head.appendChild(tag);
+function onYouTubeIframeAPIReady(){
+  player = new YT.Player('yt', {videoId: VIDEO_ID, playerVars:{autoplay:0, controls:0, loop:1, playlist:VIDEO_ID, playsinline:1},
+    events:{onReady:() => { prontoYT = true; player.setVolume(70); if (querTocar) tocar(); },
+            onStateChange:e => { tocando = e.data === YT.PlayerState.PLAYING; document.getElementById('musica').classList.toggle('tocando', tocando); }}});
+}
+function tocar(){ if (prontoYT) player.playVideo(); else querTocar = true; }
+function alternaMusica(){ if (!prontoYT) return; tocando ? player.pauseVideo() : player.playVideo(); }
+
+/* ---------- Abrir ---------- */
+function abrir(){
+  tocar();
+  document.getElementById('abertura').classList.add('saiu');
+  document.getElementById('musica').style.display = 'block';
+  chuvaDeCoracoes();
+}
+</script>
+</body>
+</html>
